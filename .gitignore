@@ -1,0 +1,21 @@
+# Build
+/build/
+/CMakeFiles/
+/Makefile
+/CMakeCache.txt
+
+# Logs
+/log/
+
+# Compiled
+*.o
+*.obj
+*.so
+*.a
+*.exe
+
+# Others
+*.swp
+*.user
+*.vcxproj*
+.vscode/
