@@ -6,6 +6,9 @@
 
 # Logs
 /log/
+/old_version/
+/script/
+
 
 # Compiled
 *.o
@@ -19,3 +22,4 @@
 *.user
 *.vcxproj*
 .vscode/
+

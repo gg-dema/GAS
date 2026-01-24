@@ -1,9 +1,12 @@
 BasedOnStyle: Google
-IndentWidth: 2
-ColumnLimit: 100
-UseTab: Never
-AllowShortFunctionsOnASingleLine: Empty
-SortIncludes: true
-IncludeBlocks: Preserve
-AlwaysBreakTemplateDeclarations: Yes
+IndentWidth: 4
+ColumnLimit: 80
 
+# Break function parameters and arguments into multiple lines
+BinPackParameters: false
+BinPackArguments: false
+
+# Break constructor declarations if they are too long
+AllowAllConstructorInitializersOnNextLine: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+BreakConstructorInitializers: BeforeColon

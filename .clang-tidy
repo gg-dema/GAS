@@ -1,15 +1,12 @@
 Checks: >
-  modernize-*,
+  clang-analyzer-*,
   bugprone-*,
   performance-*,
   readability-*,
-  cppcoreguidelines-*,
-  -modernize-use-trailing-return-type,
-  -cppcoreguidelines-owning-memory
+  modernize-*,
+  google-*
 
 WarningsAsErrors: ''
-HeaderFilterRegex: 'src/|include/'
-FormatStyle: file
-CheckOptions:
-  - { key: modernize-loop-convert.MaxCopySize, value: '16' }
-
+HeaderFilterRegex: '.*'
+FormatStyle: google
+CheckOptions: []

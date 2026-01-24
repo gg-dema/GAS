@@ -1,9 +1,10 @@
+#include "app.cpp"
 
-
-double return_double() {
-  return 3.14;
-}
+int WIDTH = 1000;
+int HEIGHT = 500;
 
 int main() {
-  return 0;
+    App app;
+    app.run();
+    return 0;
 }
