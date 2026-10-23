@@ -27,6 +27,9 @@ class Simulator {
     std::tuple<Forces...> _forces;
     OdeSolver<N> _solver;
     Grid<N> _spatial_hash_grid;
+    // pairwise collision response; on by default, can be disabled to study the
+    // pure single-particle ODE (see src/headless)
+    bool collisions_enabled = true;
 
     Simulator(Forces... f) : _forces(std::make_tuple(std::move(f)...)) {}
 
@@ -58,7 +61,9 @@ class Simulator {
 
     void evolve(int N_step) {
         for (int i = 0; i < N_step; i++) {
-            _spatial_hash_grid.fill(_state);
+            if (collisions_enabled) {
+                _spatial_hash_grid.fill(_state);
+            }
             for (int particle_idx = 0; particle_idx < gas::config::MAX_PARTICLE;
                  particle_idx++) {
                 float x = _state[particle_idx].data[0];
@@ -83,6 +88,7 @@ class Simulator {
             }
             // apply collision detection and correction
             //*
+            // (the grid is empty when collisions are disabled)
             for (auto& [key, particle_ids] : _spatial_hash_grid.cells) {
                 auto pair = _spatial_hash_grid.get_pairs(particle_ids);
                 for (auto& [idx_i, idx_j] : pair) {

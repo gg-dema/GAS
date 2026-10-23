@@ -1,0 +1,22 @@
+name: gas
+channels:
+  - conda-forge
+dependencies:
+  - libgl-devel
+  - xorg-libxinerama
+  - make
+  - xorg-libx11
+  - xorg-libxext
+  - xorg-libxcursor
+  - python=3.12
+  - gxx_linux-64[version='>=13']
+  - gcc_linux-64[version='>=13']
+  - xorg-xorgproto
+  - libxkbcommon
+  - ninja
+  - cmake[version='>=3.30']
+  - pkg-config
+  - xorg-libxi
+  - xorg-libxrandr
+  - matplotlib
+  - numpy

@@ -59,3 +59,15 @@ target_link_libraries(gas PRIVATE
     gas_visual # from my custom visualization
     gas_core   # from my custom core physics
 )
+
+
+# Headless driver (no window, no OpenGL): parameter sweeps and README figures
+add_executable(gas_headless
+  headless/main.cpp
+)
+target_include_directories(gas_headless
+    PRIVATE
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/include
+)
+target_link_libraries(gas_headless PRIVATE gas_core)
